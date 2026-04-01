@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upload | ImgHub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="page-head">
+      <nav class="row" aria-label="Primary navigation">
+        <a href="index.html" class="button secondary">ImgHub</a>
+        <a href="gallery.html" class="button ghost">Gallery</a>
+        <a href="upload.html" class="button ghost">Upload</a>
+        <a href="login.html" class="button ghost">Access</a>
+      </nav>
+      <p class="link-row">
+        <a href="index.html">Home</a>
+        <span aria-hidden="true"> / </span>
+        <span>Upload</span>
+      </p>
+      <p class="page-kicker">Upload</p>
+      <h1>Push encrypted images</h1>
+      <p class="page-subtitle">Create or update a repo, encrypt files with the repo pass phrase, then commit everything in one step.</p>
+    </header>
+
+    <form id="uploadForm" class="card">
+      <h2 class="card-title">Upload details</h2>
+
+      <label class="check-row" for="isNewRepo">
+        <input id="isNewRepo" type="checkbox" />
+        <span>This is a new repo</span>
+      </label>
+
+      <div class="field">
+        <label for="ownerName">Owner name</label>
+        <input id="ownerName" type="text" placeholder="Enter owner name" required />
+      </div>
+
+      <div class="field">
+        <label for="repoName">Repo name</label>
+        <input id="repoName" type="text" placeholder="Enter repo name" required />
+      </div>
+
+      <div id="repoPassWrap" class="field">
+        <label for="repoPassphrase">Repo pass phrase</label>
+        <input id="repoPassphrase" type="password" placeholder="Enter repo pass phrase" />
+      </div>
+
+      <div class="field">
+        <label for="msg">Commit message</label>
+        <textarea id="msg" placeholder="Enter commit message"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="imageFiles">Images</label>
+        <input id="imageFiles" type="file" accept="image/*" multiple />
+      </div>
+
+      <div class="row">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+
+    <section class="card">
+      <h2 class="card-title">Upload payload</h2>
+      <pre id="uploadLog" class="log-box"></pre>
+    </section>
+  </main>
+
+  <script src="utils.js"></script>
+  <script src="github.js"></script>
+  <script src="upload.js"></script>
+  <script src="imgEncrypt.js"></script>
+</body>
+</html>

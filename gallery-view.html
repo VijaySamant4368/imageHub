@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Repo View | ImgHub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="page-head">
+      <nav class="row" aria-label="Primary navigation">
+        <a href="index.html" class="button secondary">ImgHub</a>
+        <a href="gallery.html" class="button ghost">Gallery</a>
+        <a href="upload.html" class="button ghost">Upload</a>
+        <a href="login.html" class="button ghost">Access</a>
+      </nav>
+      <p class="link-row">
+        <a href="index.html">Home</a>
+        <span aria-hidden="true"> / </span>
+        <a href="gallery.html">Gallery</a>
+        <span aria-hidden="true"> / </span>
+        <span>Repo view</span>
+      </p>
+      <p class="page-kicker">Repo view</p>
+      <h1>Encrypted image gallery</h1>
+      <p class="page-subtitle">Decrypt thumbnails with the repo pass phrase and open them in a full-screen viewer.</p>
+    </header>
+
+    <section class="card">
+      <h2 class="card-title">Repository contents</h2>
+      <p id="repoInfo"></p>
+      <div class="viewer-toolbar">
+        <button id="backBtn" class="secondary">Back to gallery</button>
+      </div>
+      <div id="images" class="gallery-grid"></div>
+    </section>
+  </main>
+
+  <script src="carousel.js"></script>
+  <script src="gallery-view.js"></script>
+  <script src="utils.js"></script>
+  <script src="imgEncrypt.js"></script>
+</body>
+</html>

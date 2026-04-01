@@ -1,0 +1,515 @@
+:root {
+  color-scheme: light;
+
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --accent: #9b602c;
+  --text: #172033;
+  --accent-soft: #e4bc7e;
+  --surface-alt: #eef2f7;
+  --muted: #667085;
+  --border: #d9e1ec;
+  --success: #177245;
+  --danger: #c64040;
+  --shadow: none;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --container: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+}
+
+nav {
+  width: 100%;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 1rem;
+}
+
+main {
+  width: 100%;
+  margin: 0;
+  padding: 1rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.page-head {
+  margin-bottom: 0.25rem;
+}
+
+.page-head h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+  line-height: 1.2;
+}
+
+.page-kicker {
+  margin: 0 0 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.page-subtitle {
+  color: var(--muted);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  box-shadow: none;
+}
+
+.card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+  color: var(--text);
+}
+
+.card-text {
+  color: var(--muted);
+  margin: 0;
+}
+
+.row,
+.actions,
+.viewer-toolbar,
+.repo-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.button,
+button,
+input[type="submit"] {
+  padding: 0.625rem 1rem;
+  border-radius: 8px;
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.button:hover,
+button:hover {
+  background: color-mix(in srgb, var(--accent) 90%, black);
+}
+
+button.secondary,
+.button.secondary {
+  background: #fff;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+button.ghost,
+.button.ghost {
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--border);
+}
+
+button.danger,
+.button.danger {
+  background: #fff;
+  color: var(--danger);
+  border-color: #f1caca;
+}
+
+form {
+  display: block;
+}
+
+.field {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+input[type="text"],
+input[type="password"],
+textarea,
+input[type="file"] {
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  font-size: 1rem;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+input[type="file"]:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 14%, transparent);
+}
+
+textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+input[type="file"] {
+  background: var(--surface-alt);
+}
+
+.check-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-alt);
+}
+
+.check-row input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+
+.helper,
+.link-row {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.status-block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0.75rem 0 0;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.status-pill::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+pre,
+.log-box {
+  background: #1f2937;
+  color: #e5e7eb;
+  padding: 1rem;
+  border-radius: 8px;
+  font-family: Monaco, Menlo, monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  overflow: auto;
+  border: 1px solid #374151;
+  margin: 0.75rem 0 0;
+}
+
+/* gallery list page: galleries as responsive grid items */
+.repo-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.repo-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 0.75rem;
+  padding: 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.repo-item:hover {
+  background: var(--surface-alt);
+}
+
+.repo-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text);
+  word-break: break-word;
+}
+
+.repo-label {
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.2rem;
+  font-weight: 600;
+}
+
+.empty-state {
+  padding: 2rem 1rem;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  background: #fff;
+  text-align: center;
+  color: var(--muted);
+}
+
+.empty-state::before {
+  content: "📭";
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+}
+
+/* gallery images */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+}
+
+#images canvas {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  display: block;
+}
+
+.carousel-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.carousel-nav,
+.carousel-close {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: white;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.carousel-prev {
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-next {
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-close {
+  top: 1rem;
+  right: 1rem;
+}
+
+.carousel-canvas {
+  max-width: 92vw;
+  max-height: 92vh;
+  border-radius: 8px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 0.75rem;
+  }
+
+  main {
+    padding: 0.75rem;
+  }
+
+  .page-head h1 {
+    font-size: 1.65rem;
+  }
+
+  .row,
+  .actions,
+  .viewer-toolbar,
+  .repo-actions {
+    align-items: stretch;
+  }
+
+  .repo-list {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}
+
+
+
+/* body {
+  margin: 0;
+  padding: 24px;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+h1, h2 {
+  margin-top: 0;
+}
+
+section {
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+  margin-bottom: 12px;
+}
+
+input,
+button {
+  font: inherit;
+  padding: 8px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="file"] {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.hidden {
+  display: none;
+}
+
+.repo-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.repo-name {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+pre {
+  background: #f3f3f3;
+  padding: 12px;
+  overflow: auto;
+} */

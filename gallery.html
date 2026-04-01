@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | ImgHub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="page-head">
+      <nav class="row" aria-label="Primary navigation">
+        <a href="index.html" class="button secondary">ImgHub</a>
+        <a href="gallery.html" class="button ghost">Gallery</a>
+        <a href="upload.html" class="button ghost">Upload</a>
+        <a href="login.html" class="button ghost">Access</a>
+      </nav>
+      <p class="link-row">
+        <a href="index.html">Home</a>
+        <span aria-hidden="true"> / </span>
+        <span>Gallery</span>
+      </p>
+      <p class="page-kicker">Gallery</p>
+      <h1>Saved repos</h1>
+      <p class="page-subtitle">Keep a short list of repos you want to browse locally.</p>
+    </header>
+
+    <section class="card">
+      <h2 class="card-title">Repository list</h2>
+      <div class="actions">
+        <button id="addRepoBtn">Add repo</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <div id="repoList" class="repo-list"></div>
+    </section>
+  </main>
+
+  <script src="utils.js"></script>
+  <script src="gallery.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ImgHub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="page-head">
+      <nav class="row" aria-label="Primary navigation">
+        <a href="index.html" class="button secondary">ImgHub</a>
+        <a href="gallery.html" class="button ghost">Gallery</a>
+        <a href="upload.html" class="button ghost">Upload</a>
+        <a href="login.html" class="button ghost">Access</a>
+      </nav>
+      <p class="link-row">
+        <a href="index.html">Home</a>
+        <span aria-hidden="true"> / </span>
+        <span>Dashboard</span>
+      </p>
+      <p class="page-kicker">ImgHub</p>
+      <h1>Image repo utility</h1>
+      <p class="page-subtitle">Browse encrypted image repos, save access locally, and upload when a PAT is available.</p>
+    </header>
+
+    <section class="card hero-card">
+      <h2 class="card-title">Quick actions</h2>
+      <div class="status-block">
+        <div class="status-pill" id="homeText"></div>
+        <div class="actions">
+          <button id="loginBtn" class="secondary">Manage access</button>
+          <button id="uploadBtn">Upload</button>
+          <button id="galleryBtn" class="ghost">Open gallery</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title">Activity</h2>
+      <pre id="logBox" class="log-box"></pre>
+    </section>
+  </main>
+
+  <script src="utils.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
