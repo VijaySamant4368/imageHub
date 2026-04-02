@@ -83,3 +83,9 @@ Your token needs:
 ## Why
 
 I thought it would be fun.
+
+## Warning
+
+Use an alt account for generating the PAT and storing images.
+
+I can’t guarantee how GitHub might react to this usage.
