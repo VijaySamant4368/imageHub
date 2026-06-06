@@ -3,43 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login | ImgHub</title>
+  <title>Access | ImgHub</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="app-shell">
     <header class="page-head">
       <nav class="row" aria-label="Primary navigation">
-        <a href="index.html" class="button secondary">ImgHub</a>
-        <a href="gallery.html" class="button ghost">Gallery</a>
-        <a href="upload.html" class="button ghost">Upload</a>
-        <a href="login.html" class="button ghost">Access</a>
+        <a href="index.html" class="button">ImgHub</a>
+        <div class="row" style="margin-left: auto;">
+          <a href="gallery.html" class="button ghost">Gallery</a>
+          <a href="upload.html" class="button ghost">Upload</a>
+          <a href="login.html" class="button secondary">Access</a>
+        </div>
       </nav>
-      <p class="link-row">
+      <div class="link-row">
         <a href="index.html">Home</a>
         <span aria-hidden="true"> / </span>
         <span>Access</span>
-      </p>
-      <p class="page-kicker">Access</p>
-      <h1>Store your GitHub token</h1>
-      <p class="page-subtitle">Your PAT stays encrypted in local storage and is unlocked with your pass phrase.</p>
+      </div>
+      <p class="page-kicker">Security</p>
+      <h1>GitHub Access Token</h1>
+      <p class="page-subtitle">Your Personal Access Token (PAT) is encrypted locally. It is never sent to our servers, only to GitHub.</p>
     </header>
 
     <section class="card">
-      <h2 class="card-title">Token setup</h2>
-      <p id="loginText" class="status-pill"></p>
-      <p class="link-row">
-        <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token">Learn how to generate a GitHub PAT</a>
-      </p>
-
+      <h2 class="card-title">Token Configuration</h2>
+      <div id="loginText" class="status-bar" style="margin-bottom: 1.5rem;">Checking token status...</div>
+      
       <div class="field">
-        <label for="patInput">GitHub PAT</label>
-        <input id="patInput" type="password" placeholder="Enter GitHub PAT" />
+        <label for="patInput">GitHub Personal Access Token</label>
+        <input id="patInput" type="password" placeholder="ghp_xxxxxxxxxxxx" />
+        <p class="link-row" style="margin-top: 0.5rem;">
+          <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token" target="_blank" rel="noopener noreferrer">How to generate a token?</a>
+        </p>
       </div>
 
-      <div class="row">
-        <button id="savePatBtn">Save PAT</button>
-        <button id="browseBtn" class="secondary">Back</button>
+      <div class="actions">
+        <button id="savePatBtn">Save Token</button>
+        <button id="browseBtn" class="secondary">Back to Dashboard</button>
       </div>
     </section>
   </main>

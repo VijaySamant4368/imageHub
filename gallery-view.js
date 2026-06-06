@@ -64,9 +64,9 @@ async function getImgLinks() {
 }
 
 if (!owner || !repo) {
-  repoInfo.textContent = "Missing owner or repo.";
+  repoInfo.textContent = "Repository not found";
 } else {
-  repoInfo.textContent = `Showing gallery for ${owner}/${repo}`;
+  repoInfo.textContent = `${owner} / ${repo}`;
 }
 
 backBtn.addEventListener("click", () => {

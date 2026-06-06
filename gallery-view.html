@@ -10,30 +10,33 @@
   <main class="app-shell">
     <header class="page-head">
       <nav class="row" aria-label="Primary navigation">
-        <a href="index.html" class="button secondary">ImgHub</a>
-        <a href="gallery.html" class="button ghost">Gallery</a>
-        <a href="upload.html" class="button ghost">Upload</a>
-        <a href="login.html" class="button ghost">Access</a>
+        <a href="index.html" class="button">ImgHub</a>
+        <div class="row" style="margin-left: auto;">
+          <a href="gallery.html" class="button ghost">Gallery</a>
+          <a href="upload.html" class="button ghost">Upload</a>
+          <a href="login.html" class="button secondary">Access</a>
+        </div>
       </nav>
-      <p class="link-row">
+      <div class="link-row">
         <a href="index.html">Home</a>
         <span aria-hidden="true"> / </span>
         <a href="gallery.html">Gallery</a>
         <span aria-hidden="true"> / </span>
-        <span>Repo view</span>
-      </p>
-      <p class="page-kicker">Repo view</p>
-      <h1>Encrypted image gallery</h1>
-      <p class="page-subtitle">Decrypt thumbnails with the repo pass phrase and open them in a full-screen viewer.</p>
+        <span>Repo View</span>
+      </div>
+      <p class="page-kicker" id="repoInfo">Repository View</p>
+      <h1>Encrypted Gallery</h1>
+      <p class="page-subtitle">Enter the repository passphrase to decrypt and view your images. High-resolution previews are available in the viewer.</p>
     </header>
 
-    <section class="card">
-      <h2 class="card-title">Repository contents</h2>
-      <p id="repoInfo"></p>
-      <div class="viewer-toolbar">
-        <button id="backBtn" class="secondary">Back to gallery</button>
+    <div class="actions" style="justify-content: space-between; align-items: center; margin-bottom: -1rem;">
+      <button id="backBtn" class="secondary">← Back to Collections</button>
+    </div>
+
+    <section class="card" style="background: transparent; border: none; box-shadow: none; padding: 0;">
+      <div id="images" class="gallery-grid">
+        <!-- JS will decrypt and populate images here -->
       </div>
-      <div id="images" class="gallery-grid"></div>
     </section>
   </main>
 

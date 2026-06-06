@@ -10,62 +10,66 @@
   <main class="app-shell">
     <header class="page-head">
       <nav class="row" aria-label="Primary navigation">
-        <a href="index.html" class="button secondary">ImgHub</a>
-        <a href="gallery.html" class="button ghost">Gallery</a>
-        <a href="upload.html" class="button ghost">Upload</a>
-        <a href="login.html" class="button ghost">Access</a>
+        <a href="index.html" class="button">ImgHub</a>
+        <div class="row" style="margin-left: auto;">
+          <a href="gallery.html" class="button ghost">Gallery</a>
+          <a href="upload.html" class="button ghost">Upload</a>
+          <a href="login.html" class="button secondary">Access</a>
+        </div>
       </nav>
-      <p class="link-row">
+      <div class="link-row">
         <a href="index.html">Home</a>
         <span aria-hidden="true"> / </span>
         <span>Upload</span>
-      </p>
-      <p class="page-kicker">Upload</p>
-      <h1>Push encrypted images</h1>
-      <p class="page-subtitle">Create or update a repo, encrypt files with the repo pass phrase, then commit everything in one step.</p>
+      </div>
+      <p class="page-kicker">Deployment</p>
+      <h1>Push Encrypted Images</h1>
+      <p class="page-subtitle">Select images to encrypt and upload to your GitHub repository. Everything is processed in-browser.</p>
     </header>
 
     <form id="uploadForm" class="card">
-      <h2 class="card-title">Upload details</h2>
+      <h2 class="card-title">Upload Details</h2>
 
       <label class="check-row" for="isNewRepo">
         <input id="isNewRepo" type="checkbox" />
-        <span>This is a new repo</span>
+        <span>Create as a new repository</span>
       </label>
 
-      <div class="field">
-        <label for="ownerName">Owner name</label>
-        <input id="ownerName" type="text" placeholder="Enter owner name" required />
-      </div>
+      <div class="row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start;">
+        <div class="field">
+          <label for="ownerName">GitHub Owner</label>
+          <input id="ownerName" type="text" placeholder="username or org" required />
+        </div>
 
-      <div class="field">
-        <label for="repoName">Repo name</label>
-        <input id="repoName" type="text" placeholder="Enter repo name" required />
+        <div class="field">
+          <label for="repoName">Repository Name</label>
+          <input id="repoName" type="text" placeholder="my-secure-images" required />
+        </div>
       </div>
 
       <div id="repoPassWrap" class="field">
-        <label for="repoPassphrase">Repo pass phrase</label>
-        <input id="repoPassphrase" type="password" placeholder="Enter repo pass phrase" />
+        <label for="repoPassphrase">Repository Passphrase</label>
+        <input id="repoPassphrase" type="password" placeholder="Used for encryption/decryption" />
       </div>
 
       <div class="field">
-        <label for="msg">Commit message</label>
-        <textarea id="msg" placeholder="Enter commit message"></textarea>
+        <label for="msg">Commit Message</label>
+        <textarea id="msg" placeholder="Describe this upload..."></textarea>
       </div>
 
       <div class="field">
-        <label for="imageFiles">Images</label>
+        <label for="imageFiles">Image Files</label>
         <input id="imageFiles" type="file" accept="image/*" multiple />
       </div>
 
-      <div class="row">
-        <button type="submit">Submit</button>
+      <div class="actions">
+        <button type="submit" style="width: 100%; justify-content: center;">Start Upload</button>
       </div>
     </form>
 
     <section class="card">
-      <h2 class="card-title">Upload payload</h2>
-      <pre id="uploadLog" class="log-box"></pre>
+      <h2 class="card-title">Upload Progress</h2>
+      <pre id="uploadLog" class="log-box">Ready for upload...</pre>
     </section>
   </main>
 

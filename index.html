@@ -3,43 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ImgHub</title>
+  <title>ImgHub | Secure Image Repository</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="app-shell">
     <header class="page-head">
       <nav class="row" aria-label="Primary navigation">
-        <a href="index.html" class="button secondary">ImgHub</a>
-        <a href="gallery.html" class="button ghost">Gallery</a>
-        <a href="upload.html" class="button ghost">Upload</a>
-        <a href="login.html" class="button ghost">Access</a>
+        <a href="index.html" class="button">ImgHub</a>
+        <div class="row" style="margin-left: auto;">
+          <a href="gallery.html" class="button ghost">Gallery</a>
+          <a href="upload.html" class="button ghost">Upload</a>
+          <a href="login.html" class="button secondary">Access</a>
+        </div>
       </nav>
-      <p class="link-row">
-        <a href="index.html">Home</a>
-        <span aria-hidden="true"> / </span>
+      <div class="link-row">
         <span>Dashboard</span>
-      </p>
-      <p class="page-kicker">ImgHub</p>
-      <h1>Image repo utility</h1>
-      <p class="page-subtitle">Browse encrypted image repos, save access locally, and upload when a PAT is available.</p>
+      </div>
+      <p class="page-kicker">Welcome to ImgHub</p>
+      <h1>Secure Image Management</h1>
+      <p class="page-subtitle">Browse encrypted repositories, manage your GitHub access, and securely upload images with ease.</p>
     </header>
 
     <section class="card hero-card">
-      <h2 class="card-title">Quick actions</h2>
+      <h2 class="card-title">System Status & Quick Actions</h2>
       <div class="status-block">
-        <div class="status-pill" id="homeText"></div>
+        <div class="status-bar" id="homeText">Checking status...</div>
         <div class="actions">
-          <button id="loginBtn" class="secondary">Manage access</button>
-          <button id="uploadBtn">Upload</button>
-          <button id="galleryBtn" class="ghost">Open gallery</button>
+          <button id="loginBtn" class="secondary">Manage Access</button>
+          <button id="uploadBtn">New Upload</button>
+          <button id="galleryBtn" class="ghost">View Gallery</button>
         </div>
       </div>
     </section>
 
     <section class="card">
-      <h2 class="card-title">Activity</h2>
-      <pre id="logBox" class="log-box"></pre>
+      <h2 class="card-title">Console Output</h2>
+      <pre id="logBox" class="log-box">System initialized...</pre>
     </section>
   </main>
 

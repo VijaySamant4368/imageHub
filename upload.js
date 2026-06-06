@@ -29,8 +29,8 @@ uploadForm.addEventListener("submit", async (event) => {
     return;
   }
 
-  console.log(files);
-  alert(files);
+  // console.log(files);
+  // alert(files);
 
   const preparedFiles = await Promise.all(
     files.map(async (file) => ({
@@ -47,7 +47,6 @@ uploadForm.addEventListener("submit", async (event) => {
     files: preparedFiles,
   };
 
-  alert("Before adding")
 
   if (isNewRepo.checked) {
     const repos = getRepos();
@@ -59,16 +58,28 @@ uploadForm.addEventListener("submit", async (event) => {
       repos.push({ owner, repo });
       setRepos(repos);
     }
-    alert("Before deleteing")
   }
   deleteGallery(repo);
 
-  console.log(formData);
-  uploadLog.textContent = JSON.stringify(formData, null, 2);
-  alert("Form submitted. Check log below and console.");
+  // console.log(formData);
+  uploadLog.textContent =
+  "Form submitted\n" +
+  JSON.stringify(
+    {
+      ...formData,
+      files: formData.files.map(file => ({
+        name: file.name,
+        size: file.size,
+        type: file.type
+      }))
+    },
+    null,
+    2
+  );
   const passphrase = prompt("Please enter your pass phrase:");
   const dec_pat = await retrieveAndDecryptPAT(passphrase)
-
+  
+  alert("Form submitted. Check log below and console.");
   if (formData.isNewRepo) {
     await ghFetch(
       "https://api.github.com/user/repos",
@@ -119,6 +130,5 @@ uploadForm.addEventListener("submit", async (event) => {
     }
   );
 
-  console.log("DONE")
 
 });

@@ -10,30 +10,31 @@
   <main class="app-shell">
     <header class="page-head">
       <nav class="row" aria-label="Primary navigation">
-        <a href="index.html" class="button secondary">ImgHub</a>
-        <a href="gallery.html" class="button ghost">Gallery</a>
-        <a href="upload.html" class="button ghost">Upload</a>
-        <a href="login.html" class="button ghost">Access</a>
+        <a href="index.html" class="button">ImgHub</a>
+        <div class="row" style="margin-left: auto;">
+          <a href="gallery.html" class="button ghost">Gallery</a>
+          <a href="upload.html" class="button ghost">Upload</a>
+          <a href="login.html" class="button secondary">Access</a>
+        </div>
       </nav>
-      <p class="link-row">
+      <div class="link-row">
         <a href="index.html">Home</a>
         <span aria-hidden="true"> / </span>
         <span>Gallery</span>
-      </p>
-      <p class="page-kicker">Gallery</p>
-      <h1>Saved repos</h1>
-      <p class="page-subtitle">Keep a short list of repos you want to browse locally.</p>
+      </div>
+      <p class="page-kicker">Repositories</p>
+      <h1>Saved Collections</h1>
+      <p class="page-subtitle">A local list of your encrypted image repositories. Repositories are stored only in this browser.</p>
     </header>
 
-    <section class="card">
-      <h2 class="card-title">Repository list</h2>
-      <div class="actions">
-        <button id="addRepoBtn">Add repo</button>
-      </div>
-    </section>
+    <div class="actions" style="justify-content: flex-end; margin-bottom: -1rem;">
+      <button id="addRepoBtn" class="primary">Add Repository</button>
+    </div>
 
-    <section class="card">
-      <div id="repoList" class="repo-list"></div>
+    <section class="card" style="background: transparent; border: none; box-shadow: none; padding: 0;">
+      <div id="repoList" class="repo-list">
+        <!-- JS will populate this -->
+      </div>
     </section>
   </main>
 
